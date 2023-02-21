@@ -80,7 +80,6 @@
 
   .navbar__bottom {
     background: rgba(20, 58, 79, 0.95);
-    border-left: 1px solid rgba(123, 127, 153, 0.5);
     backdrop-filter: blur(10px);
     overflow-y: auto;
     flex: 1;
