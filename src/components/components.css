@@ -52,12 +52,87 @@
   display: none;
 }
 
+
+
+.navbar__mobile {
+    display: block;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+
+  .navbar__top {
+    background: rgba(20, 58, 79, 0.95);
+    border-bottom: 1px solid rgba(123, 127, 153, 0.15);
+    height: 60px;
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .navbar__top img {
+    cursor: pointer;
+  }
+
+  .navbar__bottom {
+    background: rgba(20, 58, 79, 0.95);
+    border-left: 1px solid rgba(123, 127, 153, 0.5);
+    backdrop-filter: blur(10px);
+    overflow-y: auto;
+    flex: 1;
+    height: 100%;
+  }
+
+  .navbar__bottom-title {
+    padding: 16px 24px;
+  }
+
+  .navbar__bottom-title p {
+    font-family: "Manrope";
+    font-style: normal;
+    font-weight: 800;
+    font-size: 24px;
+    line-height: 33px;
+    letter-spacing: -0.03em;
+    color: #ffffff;
+  }
+
+  .navbar__bottom-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 24px;
+    cursor: pointer;
+  }
+
+  .navbar__bottom-item label {
+    font-family: "Manrope";
+    font-style: normal;
+    font-weight: 800;
+    font-size: 16px;
+    line-height: 22px;
+    text-align: right;
+    letter-spacing: -0.03em;
+    color: #ffffff;
+    cursor: pointer;
+  }
+
+
 @media screen and (max-width: 500px) {
   .navbar_menu {
     display: flex;
+    cursor: pointer;
+    padding-right: 6px;
   }
+
+  
 
   .navbar__right {
     display: none;
   }
+
 }
