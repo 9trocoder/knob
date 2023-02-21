@@ -7,7 +7,7 @@ import ArrowRightWhite from "../assets/svg/arrowrightwhite.svg";
 import { HouseIcon } from "../utils/tools";
 import "./components.css";
 function Navbar() {
-  const [menutoggle, setMenutoggle] = useState(true);
+  const [menutoggle, setMenutoggle] = useState(false);
   return (
     <>
       {!menutoggle && <div className="navbar__cnt">

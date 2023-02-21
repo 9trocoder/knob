@@ -68,7 +68,7 @@
     background: rgba(20, 58, 79, 0.95);
     border-bottom: 1px solid rgba(123, 127, 153, 0.15);
     height: 60px;
-    padding: 0 24px;
+    padding: 0 16px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -88,14 +88,14 @@
   }
 
   .navbar__bottom-title {
-    padding: 16px 24px;
+    padding: 16px 16px;
   }
 
   .navbar__bottom-title p {
     font-family: "Manrope";
     font-style: normal;
     font-weight: 800;
-    font-size: 24px;
+    font-size: 18px;
     line-height: 33px;
     letter-spacing: -0.03em;
     color: #ffffff;
@@ -105,15 +105,15 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 16px 24px;
+    padding: 16px 16px;
     cursor: pointer;
   }
 
   .navbar__bottom-item label {
     font-family: "Manrope";
     font-style: normal;
-    font-weight: 800;
-    font-size: 16px;
+    font-weight: 500;
+    font-size: 14px;
     line-height: 22px;
     text-align: right;
     letter-spacing: -0.03em;
