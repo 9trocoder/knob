@@ -1,0 +1,63 @@
+.navbar__cnt {
+  position: fixed;
+  width: 100%;
+  background-color: #fff;
+  height: 60px;
+  border-bottom: 1px solid rgba(123, 127, 153, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 24px;
+}
+
+.navbar__cnt img {
+  cursor: pointer;
+}
+
+.navbar__right {
+  display: flex;
+  align-items: center;
+}
+
+.navbar__item {
+  display: flex;
+  align-items: center;
+  align-items: center;
+  padding: 12px 13px;
+  gap: 8px;
+  height: 40px;
+  background: #ffffff;
+  border: 1px solid rgba(123, 127, 153, 0.25);
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.navbar__item label {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 16px;
+  color: #143a4f;
+  cursor: pointer;
+}
+.navhost {
+  margin-right: 20px;
+}
+.navlog {
+  margin-right: 10px;
+}
+
+.navbar_menu {
+  display: none;
+}
+
+@media screen and (max-width: 500px) {
+  .navbar_menu {
+    display: flex;
+  }
+
+  .navbar__right {
+    display: none;
+  }
+}
