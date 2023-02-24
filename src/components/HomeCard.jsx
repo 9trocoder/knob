@@ -15,7 +15,12 @@ function HomeCard({
   return (
     <div className="homecnt">
       <div className="hometop">
-        <img src={homeimg} alt="" />
+        <div className="hometopimage">
+            {homeimg.map((image, key) => (
+               <img key={key} src={`${image}`} alt="" /> 
+            ))}
+        </div>
+        
         <div className="homefavicon">{favorite}</div>
       </div>
       <div className="homebottom">
