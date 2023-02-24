@@ -273,7 +273,6 @@
   align-items: center;
   justify-content: center;
   width: 100%;
-
 }
 
 .hometopimage {
@@ -294,6 +293,23 @@
   position: absolute;
   top: 8px;
   right: 8px;
+}
+
+.homenavarrows {
+  position: absolute;
+  bottom: 8px; left: 8px;
+  background: #ffffff;
+  border-radius: 8px;
+  width: 48px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4px 4px;
+}
+.homenavaritems {
+  margin-top: 3px;
+  cursor: pointer;
 }
 
 @media screen and (max-width: 500px) {

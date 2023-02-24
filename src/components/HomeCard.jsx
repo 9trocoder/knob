@@ -1,5 +1,5 @@
 import React from "react";
-import { AddIcon } from "../utils/tools";
+import { AddIcon, LeftArrowWhiteIcon, RightArrowIcon } from "../utils/tools";
 
 function HomeCard({
   homeimg,
@@ -16,12 +16,17 @@ function HomeCard({
     <div className="homecnt">
       <div className="hometop">
         <div className="hometopimage">
-            {homeimg.map((image, key) => (
-               <img key={key} src={`${image}`} alt="" /> 
-            ))}
+          {homeimg.map((image, key) => (
+            <img key={key} src={`${image}`} alt="" />
+          ))}
         </div>
-        
+
         <div className="homefavicon">{favorite}</div>
+
+        <div className="homenavarrows">
+          <div className="homenavaritems">{LeftArrowWhiteIcon}</div>
+          <div className="homenavaritems">{RightArrowIcon}</div>
+        </div>
       </div>
       <div className="homebottom">
         <div className="hbtop">
@@ -34,21 +39,23 @@ function HomeCard({
         </div>
 
         <div className="hbtop2">
-            <p>{beds} Bed</p>
-            <div className="hbtop2divide"/>
-            <p>{baths} Bath</p>
+          <p>{beds} Bed</p>
+          <div className="hbtop2divide" />
+          <p>{baths} Bath</p>
         </div>
 
         <div className="hbtopfeatures">
-        <p className="hbftitle">{features}</p>
+          <p className="hbftitle">{features}</p>
         </div>
       </div>
       <div className="homedown">
         <div className="homedownleft">
-            <p className="homedownprice"><span>N{price}</span> /month for 12 months</p>
+          <p className="homedownprice">
+            <span>N{price}</span> /month for 12 months
+          </p>
         </div>
         <div className="homedownright">
-            <p>{availability}</p>
+          <p>{availability}</p>
         </div>
       </div>
     </div>
@@ -56,4 +63,3 @@ function HomeCard({
 }
 
 export default HomeCard;
- 
