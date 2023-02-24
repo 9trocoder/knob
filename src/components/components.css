@@ -258,6 +258,40 @@
   justify-content: center;
 }
 
+/* Home card */
+
+.homecnt {
+  max-width: 291px;
+  border: 1px solid rgba(123, 127, 153, 0.15);
+  border-radius: 12px;
+}
+
+.hometop {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.hometopimage {
+  margin: 4px 4px;
+  display: flex;
+  overflow-x: auto;
+  border-radius: 8px 8px 4px 4px;
+}
+
+.hometopimage img {
+  width: 100%;
+}
+
+.homefavicon {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+}
+
 @media screen and (max-width: 500px) {
   .navbar_menu {
     display: flex;
