@@ -400,6 +400,53 @@
   border: 1px solid #7b7f99;
 }
 
+.homedown {
+  padding: 12px 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.homedownprice {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 8px;
+  line-height: 11px;
+  letter-spacing: -0.03em;
+  color: #7b7f99;
+}
+
+.homedownprice span {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 14px;
+  line-height: 19px;
+  letter-spacing: -0.03em;
+  color: #5db86c;
+}
+
+.homedownright {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 8px;
+  height: 22px;
+  right: 12px;
+  background: rgba(39, 174, 96, 0.15);
+  border-radius: 20px;
+}
+
+.homedownright label {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 10px;
+  line-height: 14px;
+  color: #27ae60;
+}
+
 @media screen and (max-width: 500px) {
   .navbar_menu {
     display: flex;

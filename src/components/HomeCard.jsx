@@ -55,12 +55,12 @@ function HomeCard({
       </div>
       <div className="homedown">
         <div className="homedownleft">
-          <p className="homedownprice">
-            <span>N{price}</span> /month for 12 months
-          </p>
+          <label className="homedownprice">
+            <span>N{price.toLocaleString()}</span> /month for 12 months
+          </label>
         </div>
         <div className="homedownright">
-          <p>{availability}</p>
+          <label>{availability}</label>
         </div>
       </div>
     </div>
