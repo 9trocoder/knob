@@ -31,11 +31,11 @@ function HomeCard({
       <div className="homebottom">
         <div className="hbtop">
           <div className="hbtopleft">
-            <p>{name}</p>
+            <label>{name}</label>
             <div className="hbtopleftcnt" />
-            <p>{location}</p>
+            <label>{location}</label>
           </div>
-          <div className="hbtopleft">{AddIcon}</div>
+          <div className="hbtopright">{AddIcon}</div>
         </div>
 
         <div className="hbtop2">

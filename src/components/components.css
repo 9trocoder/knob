@@ -297,7 +297,8 @@
 
 .homenavarrows {
   position: absolute;
-  bottom: 8px; left: 8px;
+  bottom: 8px;
+  left: 8px;
   background: #ffffff;
   border-radius: 8px;
   width: 48px;
@@ -309,6 +310,40 @@
 }
 .homenavaritems {
   margin-top: 3px;
+  cursor: pointer;
+}
+
+.hbtop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px;
+}
+
+.hbtopleft {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.hbtopleft label {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 19px;
+  letter-spacing: -0.03em;
+  color: #143a4f;
+}
+
+.hbtopleftcnt {
+  width: 4px;
+  height: 4px;
+  border-radius: 100%;
+  background: #5db86c;
+}
+
+.hbtopright {
   cursor: pointer;
 }
 
