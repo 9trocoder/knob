@@ -8,6 +8,7 @@ import img4 from "../assets/img/img4.png";
 
 function Homes() {
   const images = [img1, img2, img3, img4];
+  const features = ["Apartment", "Estate", "Furnished", "Ensuite"];
   return (
     <div className="homescnt">
       <HomeCard
@@ -19,6 +20,7 @@ function Homes() {
         baths={5}
         price={50000}
         availability="Vacant"
+        features={features}
       />
     </div>
   );

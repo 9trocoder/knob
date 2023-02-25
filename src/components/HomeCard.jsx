@@ -45,7 +45,12 @@ function HomeCard({
         </div>
 
         <div className="hbtopfeatures">
-          <p className="hbftitle">{features}</p>
+          {features?.map((feat, key) => (
+            <label key={key} className="hbftitle">
+              {feat}
+              {key === features.length - 1 ? "" : <div className="featurdot" />}
+            </label>
+          ))}
         </div>
       </div>
       <div className="homedown">
