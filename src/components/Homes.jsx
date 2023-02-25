@@ -22,6 +22,94 @@ function Homes() {
         availability="Vacant"
         features={features}
       />
+      <HomeCard
+        homeimg={images}
+        favorite={FavouriteIcon}
+        name="The Space"
+        location="Lekki, Lagos"
+        beds={4}
+        baths={5}
+        price={50000}
+        availability="Vacant"
+        features={features}
+      />
+      <HomeCard
+        homeimg={images}
+        favorite={FavouriteIcon}
+        name="The Space"
+        location="Lekki, Lagos"
+        beds={4}
+        baths={5}
+        price={50000}
+        availability="Vacant"
+        features={features}
+      />
+      <HomeCard
+        homeimg={images}
+        favorite={FavouriteIcon}
+        name="The Space"
+        location="Lekki, Lagos"
+        beds={4}
+        baths={5}
+        price={50000}
+        availability="Vacant"
+        features={features}
+      />
+      <HomeCard
+        homeimg={images}
+        favorite={FavouriteIcon}
+        name="The Space"
+        location="Lekki, Lagos"
+        beds={4}
+        baths={5}
+        price={50000}
+        availability="Vacant"
+        features={features}
+      />
+      <HomeCard
+        homeimg={images}
+        favorite={FavouriteIcon}
+        name="The Space"
+        location="Lekki, Lagos"
+        beds={4}
+        baths={5}
+        price={50000}
+        availability="Vacant"
+        features={features}
+      />
+      <HomeCard
+        homeimg={images}
+        favorite={FavouriteIcon}
+        name="The Space"
+        location="Lekki, Lagos"
+        beds={4}
+        baths={5}
+        price={50000}
+        availability="Vacant"
+        features={features}
+      />
+      <HomeCard
+        homeimg={images}
+        favorite={FavouriteIcon}
+        name="The Space"
+        location="Lekki, Lagos"
+        beds={4}
+        baths={5}
+        price={50000}
+        availability="Vacant"
+        features={features}
+      />
+      <HomeCard
+        homeimg={images}
+        favorite={FavouriteIcon}
+        name="The Space"
+        location="Lekki, Lagos"
+        beds={4}
+        baths={5}
+        price={50000}
+        availability="Vacant"
+        features={features}
+      />
     </div>
   );
 }
