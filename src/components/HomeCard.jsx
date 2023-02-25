@@ -39,9 +39,9 @@ function HomeCard({
         </div>
 
         <div className="hbtop2">
-          <p>{beds} Bed</p>
+          <label>{beds} Bed</label>
           <div className="hbtop2divide" />
-          <p>{baths} Bath</p>
+          <label>{baths} Bath</label>
         </div>
 
         <div className="hbtopfeatures">
