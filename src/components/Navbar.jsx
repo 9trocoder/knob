@@ -4,9 +4,10 @@ import KnobLogoWhite from "../assets/svg/knoblogowhite.svg";
 import MenuIcon from "../assets/svg/menuicon.svg";
 import MenuIconClose from "../assets/svg/menucloseicon.svg";
 import ArrowRightWhite from "../assets/svg/arrowrightwhite.svg";
-import { EypeOpen, HouseIcon, RemCheck, UnCheckIcon } from "../utils/tools";
+import { EypeOpen, FacebookIcon, GoogleIcon, HouseIcon, IosIcon, RemCheck, UnCheckIcon } from "../utils/tools";
 import "./components.css";
 import InputField from "./InputField";
+import SocialAuth from "./SocialAuth";
 function Navbar() {
   const [menutoggle, setMenutoggle] = useState(false);
   const [showlogin, setShowlogin] = useState(true);
@@ -99,6 +100,13 @@ function Navbar() {
                   Log In
                 </button>
                 <p className="loginor">Or</p>
+                <div className="dsocial">
+                  <SocialAuth name="Sign in with Google" icon={GoogleIcon} />
+                <SocialAuth name="Sign in with Facebook" icon={FacebookIcon} />
+                <SocialAuth name="Sign in with Apple" icon={IosIcon} />
+                </div>
+                
+
               </div>
             </div>
           </div>
