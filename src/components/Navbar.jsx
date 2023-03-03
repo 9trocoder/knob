@@ -4,7 +4,14 @@ import KnobLogoWhite from "../assets/svg/knoblogowhite.svg";
 import MenuIcon from "../assets/svg/menuicon.svg";
 import MenuIconClose from "../assets/svg/menucloseicon.svg";
 import ArrowRightWhite from "../assets/svg/arrowrightwhite.svg";
-import { EypeOpen, FacebookIcon, GoogleIcon, HouseIcon, IosIcon, RemCheck, UnCheckIcon } from "../utils/tools";
+import {
+  EypeOpen,
+  FacebookIcon,
+  GoogleIcon,
+  HouseIcon,
+  IosIcon,
+  RemCheck,
+} from "../utils/tools";
 import "./components.css";
 import InputField from "./InputField";
 import SocialAuth from "./SocialAuth";
@@ -72,41 +79,36 @@ function Navbar() {
       )}
       {showlogin && (
         <>
-          <div className="logincntoverlay">
-            <div className="loginwrap">
-              <div className="loginbody">
-                <p className="loginwelcome">Welcome Back</p>
-                <InputField
-                  type="email"
-                  placeholder="e.g. Johndoe@gmail.com"
-                  label="Email Address"
-                />
-                <InputField
-                  type="password"
-                  placeholder="********"
-                  label="Password"
-                  inputIcon={EypeOpen}
-                />
-                <div className="remforgot">
-                  <div className="remforgot-left">
-                    <div className="rflcheck">{RemCheck}</div>
-                    <label>Remember me</label>
-                  </div>
-                  <div className="remforgot-right">
-                    <label>Forgot Password?</label>
-                  </div>
+          <div className="logincntoverlay"></div>
+          <div className="loginwrap">
+            <div className="loginbody">
+              <p className="loginwelcome">Welcome Back</p>
+              <InputField
+                type="email"
+                placeholder="e.g. Johndoe@gmail.com"
+                label="Email Address"
+              />
+              <InputField
+                type="password"
+                placeholder="********"
+                label="Password"
+                inputIcon={EypeOpen}
+              />
+              <div className="remforgot">
+                <div className="remforgot-left">
+                  <div className="rflcheck">{RemCheck}</div>
+                  <label>Remember me</label>
                 </div>
-                <button className="loginbtn">
-                  Log In
-                </button>
-                <p className="loginor">Or</p>
-                <div className="dsocial">
-                  <SocialAuth name="Sign in with Google" icon={GoogleIcon} />
+                <div className="remforgot-right">
+                  <label>Forgot Password?</label>
+                </div>
+              </div>
+              <button className="loginbtn">Log In</button>
+              <p className="loginor">Or</p>
+              <div className="dsocial">
+                <SocialAuth name="Sign in with Google" icon={GoogleIcon} />
                 <SocialAuth name="Sign in with Facebook" icon={FacebookIcon} />
                 <SocialAuth name="Sign in with Apple" icon={IosIcon} />
-                </div>
-                
-
               </div>
             </div>
           </div>

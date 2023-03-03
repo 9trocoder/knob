@@ -1,4 +1,5 @@
 import React from "react";
+import "./components.css";
 
 function SocialAuth({ icon, name }) {
   return (
