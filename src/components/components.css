@@ -650,6 +650,40 @@
   padding: 40px 16px;
 }
 
+/* Side bar Outlet */
+.sidebaroutlet_cnt {
+  position: fixed;
+  top: 60px;
+  right: 0;
+  bottom: 0;
+  background: rgba(20, 58, 79, 0.95);
+  border-left: 1px solid rgba(123, 127, 153, 0.5);
+  backdrop-filter: blur(10px);
+  max-width: 420px;
+  width: 100%;
+  z-index: 20;
+}
+
+.sortbyhead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 19px 16px;
+}
+
+.sortbyheadtitle {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 18px;
+  letter-spacing: -0.03em;
+  color: #ffffff;
+}
+
+.sortbyheadclose {
+  cursor: pointer;
+}
+
 @media screen and (max-width: 990px) {
   .heroleftcnt {
     display: flex;
