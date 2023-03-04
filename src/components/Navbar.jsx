@@ -17,7 +17,7 @@ import InputField from "./InputField";
 import SocialAuth from "./SocialAuth";
 function Navbar() {
   const [menutoggle, setMenutoggle] = useState(false);
-  const [showlogin, setShowlogin] = useState(true);
+  const [showlogin, setShowlogin] = useState(false);
   return (
     <>
       {!menutoggle && (
@@ -36,7 +36,10 @@ function Navbar() {
               <label>Host a place</label>
             </div>
 
-            <div className="navbar__item navlog">
+            <div
+              className="navbar__item navlog"
+              onClick={() => setShowlogin(true)}
+            >
               <label>Login</label>
             </div>
             <div className="navbar__item navreg">
@@ -65,7 +68,13 @@ function Navbar() {
                 <label>Host a Place</label>
                 <img src={ArrowRightWhite} alt="" />
               </div>
-              <div className="navbar__bottom-item">
+              <div
+                className="navbar__bottom-item"
+                onClick={() => {
+                  setShowlogin(true);
+                  setMenutoggle(false);
+                }}
+              >
                 <label>Login</label>
                 <img src={ArrowRightWhite} alt="" />
               </div>
@@ -103,13 +112,16 @@ function Navbar() {
                   <label>Forgot Password?</label>
                 </div>
               </div>
-              <button className="loginbtn">Log In</button>
+              <button onClick={() => setShowlogin(false)} className="loginbtn">
+                Log In
+              </button>
               <p className="loginor">Or</p>
               <div className="dsocial">
                 <SocialAuth name="Sign in with Google" icon={GoogleIcon} />
                 <SocialAuth name="Sign in with Facebook" icon={FacebookIcon} />
                 <SocialAuth name="Sign in with Apple" icon={IosIcon} />
               </div>
+              <p className="donhaveacnt">Don't have an account? Sign up</p>
             </div>
           </div>
         </>
