@@ -7,6 +7,9 @@ import {
   PlusIcon,
   MenuCloseIcon,
 } from "../utils/tools";
+import KnobLogoWhite from "../assets/svg/knoblogowhite.svg";
+import MenuIcon from "../assets/svg/menuicon.svg";
+import MenuIconClose from "../assets/svg/menucloseicon.svg";
 import SidebarOutlet from "./SidebarOutlet";
 
 function Hero() {
@@ -20,10 +23,16 @@ function Hero() {
     { id: 4, title: "Price: High to Low" },
   ];
   const sortbyhead = (
-    <div className="sortbyhead">
-      <label className="sortbyheadtitle">Sort By</label>
-      <div className="sortbyheadclose" onClick={() => setSort(false)}>
-        {MenuCloseIcon}
+    <div className="">
+      <div className="sortnavbar__top">
+        <img src={KnobLogoWhite} alt="" />
+        <img src={MenuIconClose} alt="" onClick={() => setSort(false)} />
+      </div>
+      <div className="sortbyhead">
+        <label className="sortbyheadtitle">Sort By</label>
+        <div className="sortbyheadclose" onClick={() => setSort(false)}>
+          {MenuCloseIcon}
+        </div>
       </div>
     </div>
   );
@@ -38,7 +47,9 @@ function Hero() {
         >
           <div
             className={
-              sortselect.includes(item.title) ? "sortbyselected" : "sortbynotselected"
+              sortselect.includes(item.title)
+                ? "sortbyselected"
+                : "sortbynotselected"
             }
           />
 
