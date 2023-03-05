@@ -41,7 +41,10 @@ function Hero() {
     <div className="sortbybody">
       {sortOptions.map((item, index) => (
         <div
-          onClick={() => setSortselect(item.title)}
+          onClick={() => {
+            setSortselect(item.title);
+            setSort(false);
+          }}
           className="sortbyitem"
           key={index}
         >
