@@ -845,6 +845,7 @@ display: none;
   /* Sidebar outlet */
   .sidebaroutlet_cnt {
     top: 0;
+    border-left: none;
   }
 
   .sortnavbar__top{
