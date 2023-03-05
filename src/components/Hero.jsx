@@ -11,6 +11,14 @@ import SidebarOutlet from "./SidebarOutlet";
 
 function Hero() {
   const [sorttab, setSort] = useState(false);
+  const [sortselect, setSortselect] = useState("Just For You");
+
+  const sortOptions = [
+    { id: 1, title: "Just For You" },
+    { id: 2, title: "Newest" },
+    { id: 3, title: "Price: Low to High" },
+    { id: 4, title: "Price: High to Low" },
+  ];
   const sortbyhead = (
     <div className="sortbyhead">
       <label className="sortbyheadtitle">Sort By</label>
@@ -19,6 +27,27 @@ function Hero() {
       </div>
     </div>
   );
+
+  const sortbybody = (
+    <div className="sortbybody">
+      {sortOptions.map((item, index) => (
+        <div
+          onClick={() => setSortselect(item.title)}
+          className="sortbyitem"
+          key={index}
+        >
+          <div
+            className={
+              sortselect.includes(item.title) ? "sortbyselected" : "sortbynotselected"
+            }
+          />
+
+          <label>{item.title}</label>
+        </div>
+      ))}
+    </div>
+  );
+
   return (
     <>
       <div className="herocnt">
@@ -44,7 +73,7 @@ function Hero() {
             <div className="herofilter">
               <div className="herofilteritem" onClick={() => setSort(true)}>
                 <div className="herofilt"></div>
-                <label>Sort By: Just For You</label>
+                <label>Sort By: {sortselect}</label>
                 <div className="herofiltadd">{PlusIcon}</div>
               </div>
               <div className="herofilteritem">
@@ -61,7 +90,7 @@ function Hero() {
         ></div>
       </div>
 
-      {sorttab && <SidebarOutlet top={sortbyhead} />}
+      {sorttab && <SidebarOutlet top={sortbyhead} body={sortbybody} />}
     </>
   );
 }

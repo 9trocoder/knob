@@ -685,6 +685,44 @@
   cursor: pointer;
 }
 
+.sortbybody {
+  padding: 0px 26px;
+  margin-top: -12px;
+}
+
+.sortbyselected,
+.sortbynotselected {
+  width: 16px;
+  height: 16px;
+  border-radius: 9999px;
+
+}
+
+.sortbyselected {
+  background: #5DB86C;
+}
+
+.sortbyitem {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  cursor: pointer;
+
+  padding: 12px 0;
+}
+
+.sortbyitem label {
+  font-family: 'Manrope';
+font-style: normal;
+font-weight: 800;
+font-size: 14px;
+line-height: 22px;
+text-align: right;
+letter-spacing: -0.03em;
+color: #FFFFFF;
+cursor: pointer
+}
+
 @media screen and (max-width: 990px) {
   .heroleftcnt {
     display: flex;
