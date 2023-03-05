@@ -14,6 +14,7 @@ import SidebarOutlet from "./SidebarOutlet";
 
 function Hero() {
   const [sorttab, setSort] = useState(false);
+  const [filtertab, setFiltertab] = useState(false);
   const [sortselect, setSortselect] = useState("Just For You");
 
   const sortOptions = [
@@ -31,6 +32,21 @@ function Hero() {
       <div className="sortbyhead">
         <label className="sortbyheadtitle">Sort By</label>
         <div className="sortbyheadclose" onClick={() => setSort(false)}>
+          {MenuCloseIcon}
+        </div>
+      </div>
+    </div>
+  );
+
+  const filterhead = (
+    <div className="">
+      <div className="sortnavbar__top">
+        <img src={KnobLogoWhite} alt="" />
+        <img src={MenuIconClose} alt="" onClick={() => setFiltertab(false)} />
+      </div>
+      <div className="sortbyhead">
+        <label className="sortbyheadtitle">Filter</label>
+        <div className="sortbyheadclose" onClick={() => setFiltertab(false)}>
           {MenuCloseIcon}
         </div>
       </div>
@@ -90,7 +106,7 @@ function Hero() {
                 <label>Sort By: {sortselect}</label>
                 <div className="herofiltadd">{PlusIcon}</div>
               </div>
-              <div className="herofilteritem">
+              <div className="herofilteritem" onClick={() => setFiltertab(true)}>
                 <div className="herofilt herofiltb"></div>
                 <label>Filter</label>
                 <div className="herofiltadd">{PlusIcon}</div>
@@ -105,6 +121,7 @@ function Hero() {
       </div>
 
       {sorttab && <SidebarOutlet top={sortbyhead} body={sortbybody} />}
+      {filtertab && <SidebarOutlet top={filterhead} />}
     </>
   );
 }
