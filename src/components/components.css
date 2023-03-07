@@ -703,6 +703,10 @@ display: none;
   color: #ffffff;
 }
 
+.fhntright {
+  margin-top: 5px;
+}
+
 
 .sortbyhead {
   display: flex;
