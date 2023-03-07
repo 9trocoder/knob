@@ -403,6 +403,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 12px 13px;
+  cursor: pointer;
   gap: 8px;
   height: 40px;
   background: #ffffff;
@@ -418,6 +419,7 @@
   line-height: 16px;
   letter-spacing: -0.03em;
   color: #000000;
+  cursor: pointer;
 }
 
 .herofiltb {
@@ -690,15 +692,21 @@ display: none;
   cursor: pointer;
 }
 
-.sortbybody {
+.sortbybody, .filterbybody {
   padding: 0px 26px;
   margin-top: -12px;
   display: grid;
   gap: 22px;
 }
 
-.sortbyselected,
-.sortbynotselected {
+.filterbybody {
+  padding: 0px 16px 0px 26px ;
+  margin-top: -12px;
+  display: grid;
+  gap: 22px;
+}
+
+.sortbyselected{
   width: 16px;
   height: 16px;
   border-radius: 9999px;
@@ -715,6 +723,35 @@ display: none;
   cursor: pointer;
 
   padding: 12px 0;
+}
+
+.filterbyitem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.filterbyitemleft {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+
+.filterbyitemleft label {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 14px;
+  line-height: 22px;
+  text-align: right;
+  letter-spacing: -0.03em;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.filterbyitemright {
+  cursor: pointer;
 }
 
 .sortbyitem label {

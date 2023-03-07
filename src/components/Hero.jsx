@@ -6,6 +6,7 @@ import {
   SearchWhiteIcon,
   PlusIcon,
   MenuCloseIcon,
+  ArrowRightWhite,
 } from "../utils/tools";
 import KnobLogoWhite from "../assets/svg/knoblogowhite.svg";
 import MenuIcon from "../assets/svg/menuicon.svg";
@@ -16,12 +17,24 @@ function Hero() {
   const [sorttab, setSort] = useState(false);
   const [filtertab, setFiltertab] = useState(false);
   const [sortselect, setSortselect] = useState("Just For You");
+  const [filterselect, setfilterselect] = useState("");
 
   const sortOptions = [
     { id: 1, title: "Just For You" },
     { id: 2, title: "Newest" },
     { id: 3, title: "Price: Low to High" },
     { id: 4, title: "Price: High to Low" },
+  ];
+  const filterOptions = [
+    { id: 1, title: "Type" },
+    { id: 2, title: "Price Range" },
+    { id: 3, title: "Baths" },
+    { id: 4, title: "Furnishing" },
+    { id: 5, title: "Ensuite" },
+    { id: 6, title: "Amenities" },
+    { id: 7, title: "Power Supply" },
+    { id: 8, title: "Stay Duration" },
+    { id: 9, title: "Roommates" },
   ];
   const sortbyhead = (
     <div className="">
@@ -78,6 +91,26 @@ function Hero() {
     </div>
   );
 
+  const filterbybody = (
+    <div className="filterbybody">
+      {filterOptions.map((item, index) => (
+        <div
+          className="filterbyitem"
+          key={index}
+          onClick={() => setfilterselect(item.title)}
+        >
+          <div className="filterbyitemleft">
+            {filterselect.includes(item.title) && (
+              <div className="sortbyselected" />
+            )}
+            <label>{item.title}</label>
+          </div>
+          <div className="filterbyitemright">{ArrowRightWhite}</div>
+        </div>
+      ))}
+    </div>
+  );
+
   return (
     <>
       <div className="herocnt">
@@ -106,7 +139,10 @@ function Hero() {
                 <label>Sort By: {sortselect}</label>
                 <div className="herofiltadd">{PlusIcon}</div>
               </div>
-              <div className="herofilteritem" onClick={() => setFiltertab(true)}>
+              <div
+                className="herofilteritem"
+                onClick={() => setFiltertab(true)}
+              >
                 <div className="herofilt herofiltb"></div>
                 <label>Filter</label>
                 <div className="herofiltadd">{PlusIcon}</div>
@@ -121,7 +157,7 @@ function Hero() {
       </div>
 
       {sorttab && <SidebarOutlet top={sortbyhead} body={sortbybody} />}
-      {filtertab && <SidebarOutlet top={filterhead} />}
+      {filtertab && <SidebarOutlet top={filterhead} body={filterbybody} />}
     </>
   );
 }
