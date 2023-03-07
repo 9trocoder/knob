@@ -942,4 +942,12 @@ display: none;
   .sortbyheadclose {
     display: none;
   }
+
+  .fhntright {
+    display: none;
+  }
+
+  .filterheadnavbar__top {
+    border-bottom: none;
+  }
 }

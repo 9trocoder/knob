@@ -71,6 +71,13 @@ function Hero() {
 
   const filterheadchild = (
     <div className="">
+       <div className="sortnavbar__top">
+        <img src={KnobLogoWhite} alt="" />
+        <img src={MenuIconClose} alt="" onClick={() => {
+              setFiltertab(true);
+              setFilterchild(false);
+            }} />
+      </div>
       <div className="filterheadnavbar__top">
         <div className="fhntleft">
           <div
