@@ -7,15 +7,18 @@ import {
   PlusIcon,
   MenuCloseIcon,
   ArrowRightWhite,
+  NavArrowLeftWhite,
 } from "../utils/tools";
 import KnobLogoWhite from "../assets/svg/knoblogowhite.svg";
 import MenuIcon from "../assets/svg/menuicon.svg";
 import MenuIconClose from "../assets/svg/menucloseicon.svg";
 import SidebarOutlet from "./SidebarOutlet";
+import SidebarChild from "./SidebarChild";
 
 function Hero() {
   const [sorttab, setSort] = useState(false);
   const [filtertab, setFiltertab] = useState(false);
+  const [filterchild, setFilterchild] = useState(false);
   const [sortselect, setSortselect] = useState("Just For You");
   const [filterselect, setfilterselect] = useState("");
 
@@ -66,6 +69,35 @@ function Hero() {
     </div>
   );
 
+  const filterheadchild = (
+    <div className="">
+      <div className="filterheadnavbar__top">
+        <div className="fhntleft">
+          <div
+            className="fhntleftarrow"
+            onClick={() => {
+              setFiltertab(true);
+              setFilterchild(false);
+            }}
+          >
+            {NavArrowLeftWhite}
+          </div>
+          <label>Filter: {filterselect}</label>
+        </div>
+        <div className="fhntright">
+          <img
+            src={MenuIconClose}
+            alt=""
+            onClick={() => {
+              setFiltertab(true);
+              setFilterchild(false);
+            }}
+          />
+        </div>
+      </div>
+    </div>
+  );
+
   const sortbybody = (
     <div className="sortbybody">
       {sortOptions.map((item, index) => (
@@ -97,7 +129,10 @@ function Hero() {
         <div
           className="filterbyitem"
           key={index}
-          onClick={() => setfilterselect(item.title)}
+          onClick={() => {
+            setfilterselect(item.title);
+            setFilterchild(true);
+          }}
         >
           <div className="filterbyitemleft">
             {filterselect.includes(item.title) && (
@@ -158,6 +193,7 @@ function Hero() {
 
       {sorttab && <SidebarOutlet top={sortbyhead} body={sortbybody} />}
       {filtertab && <SidebarOutlet top={filterhead} body={filterbybody} />}
+      {filterchild && <SidebarChild top={filterheadchild} />}
     </>
   );
 }

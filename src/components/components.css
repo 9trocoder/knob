@@ -671,6 +671,39 @@
 display: none;
 }
 
+.filterheadnavbar__top{
+  border-bottom: 1px solid rgba(123, 127, 153, 0.15);
+  height: 60px;
+  padding: 0 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.filterheadnavbar__top img {
+  cursor: pointer;
+}
+
+.fhntleft {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+
+.fhntleftarrow {
+  cursor: pointer;
+}
+
+.fhntleft label {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  letter-spacing: -0.03em;
+  color: #ffffff;
+}
+
+
 .sortbyhead {
   display: flex;
   align-items: center;
