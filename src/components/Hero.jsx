@@ -24,6 +24,9 @@ function Hero() {
   const [sortselect, setSortselect] = useState("Just For You");
   const [filterselect, setfilterselect] = useState("");
   const [typeselected, setTypeselected] = useState([]);
+  const [furnishedselected, setFurnishedselected] = useState([]);
+  const [ensuiteselected, setEnsuiteselected] = useState([]);
+  const [amenitiesselected, setAmenitiesselected] = useState([]);
   const useToggle = () => {
     const [toggleValue, setToggleValue] = useState(false);
 
@@ -44,7 +47,7 @@ function Hero() {
     { id: 1, title: "Type" },
     { id: 2, title: "Price Range" },
     { id: 3, title: "Baths" },
-    { id: 4, title: "Furnishing" },
+    { id: 4, title: "Furnished" },
     { id: 5, title: "Ensuite" },
     { id: 6, title: "Amenities" },
     { id: 7, title: "Power Supply" },
@@ -58,11 +61,62 @@ function Hero() {
     { id: 3, title: "Condominium" },
   ];
 
+  const furnishedlist = [
+    { id: 1, title: "Yes" },
+    { id: 2, title: "No" },
+  ];
+
+  const Ensuitelist = [
+    { id: 1, title: "Yes" },
+    { id: 2, title: "No" },
+  ];
+
+  const Amenities = [
+    { id: 1, title: "Air Conditioning" },
+    { id: 2, title: "CCTV" },
+    { id: 3, title: "Cupboard" },
+    { id: 4, title: "Elevator" },
+    { id: 5, title: "Electric Fence" },
+    { id: 6, title: "Freezer" },
+    { id: 7, title: "Garage" },
+    { id: 8, title: "Generator" },
+    { id: 9, title: "Internet Access" },
+    { id: 10, title: "Inverter" },
+    { id: 11, title: "Mailbox" },
+  ];
+
   const handleTypeSelect = (id) => {
     if (typeselected.includes(id)) {
       setTypeselected((prevSelected) => prevSelected.filter((s) => s !== id));
     } else {
       setTypeselected((prevSelected) => [...prevSelected, id]);
+    }
+  };
+  const handleFurnishedSelect = (id) => {
+    if (furnishedselected.includes(id)) {
+      setFurnishedselected((prevSelected) =>
+        prevSelected.filter((s) => s !== id)
+      );
+    } else {
+      setFurnishedselected((prevSelected) => [...prevSelected, id]);
+    }
+  };
+  const handleEnsuiteSelect = (id) => {
+    if (ensuiteselected.includes(id)) {
+      setEnsuiteselected((prevSelected) =>
+        prevSelected.filter((s) => s !== id)
+      );
+    } else {
+      setEnsuiteselected((prevSelected) => [...prevSelected, id]);
+    }
+  };
+  const handleAmenitiesSelect = (id) => {
+    if (amenitiesselected.includes(id)) {
+      setAmenitiesselected((prevSelected) =>
+        prevSelected.filter((s) => s !== id)
+      );
+    } else {
+      setAmenitiesselected((prevSelected) => [...prevSelected, id]);
     }
   };
 
@@ -170,6 +224,15 @@ function Hero() {
     }
   };
 
+  const handleFurnishedClick = () => {
+    settoggle(!typetoggle);
+    if (typetoggle === true) {
+      setFurnishedselected([]);
+    } else if (typetoggle === false) {
+      setFurnishedselected(furnishedlist.map((item) => item.title));
+    }
+  };
+
   const filterchildbody = (
     <>
       {filterselect === "Type" && (
@@ -202,12 +265,56 @@ function Hero() {
                 </div>
               ))}
             </div>
-          </div>{" "}
+          </div>
           {typeselected.length !== 0 && (
             <div
               className="fcbclearfilter"
               onClick={() => {
                 setTypeselected([]);
+              }}
+            >
+              <div className="fcbcfleft">{ClearCirle}</div>
+              <label>Clear Filter</label>
+            </div>
+          )}
+        </>
+      )}
+      {filterselect === "Furnished" && (
+        <>
+          <div className="fcbbody">
+            <div className="fcbbody__top">
+              <div className="fcbbt-left">
+                {typetoggle ? (
+                  <div onClick={handleFurnishedClick}>{CheckedIcon}</div>
+                ) : (
+                  <div onClick={handleFurnishedClick}>{UnCheckIcon}</div>
+                )}
+              </div>
+              <label>Select All</label>
+            </div>
+            <div className="fcbbody__bottom">
+              {furnishedlist.map((item, index) => (
+                <div className="fcbbitem" key={index}>
+                  <div
+                    className="fcbbitem-left"
+                    onClick={() => handleFurnishedSelect(item.title)}
+                  >
+                    {furnishedselected.includes(item.title) ? (
+                      <div className="">{CheckedIcon}</div>
+                    ) : (
+                      <div>{UnCheckIcon}</div>
+                    )}
+                  </div>
+                  <label>{item.title}</label>
+                </div>
+              ))}
+            </div>
+          </div>
+          {furnishedselected.length !== 0 && (
+            <div
+              className="fcbclearfilter"
+              onClick={() => {
+                setFurnishedselected([]);
               }}
             >
               <div className="fcbcfleft">{ClearCirle}</div>
