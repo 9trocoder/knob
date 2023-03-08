@@ -66,12 +66,12 @@ function Hero() {
     { id: 2, title: "No" },
   ];
 
-  const Ensuitelist = [
+  const ensuitelist = [
     { id: 1, title: "Yes" },
     { id: 2, title: "No" },
   ];
 
-  const Amenities = [
+  const amenitieslist = [
     { id: 1, title: "Air Conditioning" },
     { id: 2, title: "CCTV" },
     { id: 3, title: "Cupboard" },
@@ -233,6 +233,24 @@ function Hero() {
     }
   };
 
+  const handleEnsuiteClick = () => {
+    settoggle(!typetoggle);
+    if (typetoggle === true) {
+      setEnsuiteselected([]);
+    } else if (typetoggle === false) {
+      setEnsuiteselected(ensuitelist.map((item) => item.title));
+    }
+  };
+
+  const handleAmenitiesClick = () => {
+    settoggle(!typetoggle);
+    if (typetoggle === true) {
+      setAmenitiesselected([]);
+    } else if (typetoggle === false) {
+      setAmenitiesselected(amenitieslist.map((item) => item.title));
+    }
+  };
+
   const filterchildbody = (
     <>
       {filterselect === "Type" && (
@@ -315,6 +333,94 @@ function Hero() {
               className="fcbclearfilter"
               onClick={() => {
                 setFurnishedselected([]);
+              }}
+            >
+              <div className="fcbcfleft">{ClearCirle}</div>
+              <label>Clear Filter</label>
+            </div>
+          )}
+        </>
+      )}
+      {filterselect === "Ensuite" && (
+        <>
+          <div className="fcbbody">
+            <div className="fcbbody__top">
+              <div className="fcbbt-left">
+                {typetoggle ? (
+                  <div onClick={handleEnsuiteClick}>{CheckedIcon}</div>
+                ) : (
+                  <div onClick={handleEnsuiteClick}>{UnCheckIcon}</div>
+                )}
+              </div>
+              <label>Select All</label>
+            </div>
+            <div className="fcbbody__bottom">
+              {ensuitelist.map((item, index) => (
+                <div className="fcbbitem" key={index}>
+                  <div
+                    className="fcbbitem-left"
+                    onClick={() => handleEnsuiteSelect(item.title)}
+                  >
+                    {ensuiteselected.includes(item.title) ? (
+                      <div className="">{CheckedIcon}</div>
+                    ) : (
+                      <div>{UnCheckIcon}</div>
+                    )}
+                  </div>
+                  <label>{item.title}</label>
+                </div>
+              ))}
+            </div>
+          </div>
+          {ensuiteselected.length !== 0 && (
+            <div
+              className="fcbclearfilter"
+              onClick={() => {
+                setEnsuiteselected([]);
+              }}
+            >
+              <div className="fcbcfleft">{ClearCirle}</div>
+              <label>Clear Filter</label>
+            </div>
+          )}
+        </>
+      )}
+      {filterselect === "Amenities" && (
+        <>
+          <div className="fcbbody">
+            <div className="fcbbody__top">
+              <div className="fcbbt-left">
+                {typetoggle ? (
+                  <div onClick={handleAmenitiesClick}>{CheckedIcon}</div>
+                ) : (
+                  <div onClick={handleAmenitiesClick}>{UnCheckIcon}</div>
+                )}
+              </div>
+              <label>Select All</label>
+            </div>
+            <div className="fcbbody__bottom">
+              {amenitieslist.map((item, index) => (
+                <div className="fcbbitem" key={index}>
+                  <div
+                    className="fcbbitem-left"
+                    onClick={() => handleAmenitiesSelect(item.title)}
+                  >
+                    {amenitiesselected.includes(item.title) ? (
+                      <div className="">{CheckedIcon}</div>
+                    ) : (
+                      <div>{UnCheckIcon}</div>
+                    )}
+                  </div>
+                  <label>{item.title}</label>
+                </div>
+              ))}
+            </div>
+          </div>
+          {amenitiesselected.length !== 0 && (
+            <div
+              className="fcbclearfilter"
+              onClick={() => {
+                setAmenitiesselected([]);
               }}
             >
               <div className="fcbcfleft">{ClearCirle}</div>

@@ -666,6 +666,12 @@
   z-index: 20;
 }
 
+.sbocbottom {
+  flex: 1;
+  overflow-y: auto;
+  height: 100%;
+}
+
 .sortnavbar__top {
   display: none;
 }
