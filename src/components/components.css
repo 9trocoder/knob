@@ -669,7 +669,7 @@
 .sbocbottom {
   flex: 1;
   overflow-y: auto;
-  height: 100%;
+  height: 80vh;
 }
 
 .sortnavbar__top {
