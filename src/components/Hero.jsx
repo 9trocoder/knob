@@ -8,6 +8,8 @@ import {
   MenuCloseIcon,
   ArrowRightWhite,
   NavArrowLeftWhite,
+  UnCheckIcon,
+  CheckedIcon,
 } from "../utils/tools";
 import KnobLogoWhite from "../assets/svg/knoblogowhite.svg";
 import MenuIcon from "../assets/svg/menuicon.svg";
@@ -21,6 +23,16 @@ function Hero() {
   const [filterchild, setFilterchild] = useState(false);
   const [sortselect, setSortselect] = useState("Just For You");
   const [filterselect, setfilterselect] = useState("");
+  const [typeselected, setTypeselected] = useState([]);
+  const useToggle = () => {
+    const [toggleValue, setToggleValue] = useState(false);
+
+    const toggler = () => {
+      setToggleValue(!toggleValue);
+    };
+    return [toggleValue, toggler];
+  };
+  const [typetoggle, settoggle] = useToggle();
 
   const sortOptions = [
     { id: 1, title: "Just For You" },
@@ -39,6 +51,21 @@ function Hero() {
     { id: 8, title: "Stay Duration" },
     { id: 9, title: "Roommates" },
   ];
+
+  const typelist = [
+    { id: 1, title: "Apartment" },
+    { id: 2, title: "House" },
+    { id: 3, title: "Condominium" },
+  ];
+
+  const handleTypeSelect = (id) => {
+    if (typeselected.includes(id)) {
+      setTypeselected((prevSelected) => prevSelected.filter((s) => s !== id));
+    } else {
+      setTypeselected((prevSelected) => [...prevSelected, id]);
+    }
+  };
+
   const sortbyhead = (
     <div className="">
       <div className="sortnavbar__top">
@@ -71,12 +98,16 @@ function Hero() {
 
   const filterheadchild = (
     <div className="">
-       <div className="sortnavbar__top">
+      <div className="sortnavbar__top">
         <img src={KnobLogoWhite} alt="" />
-        <img src={MenuIconClose} alt="" onClick={() => {
-              setFiltertab(true);
-              setFilterchild(false);
-            }} />
+        <img
+          src={MenuIconClose}
+          alt=""
+          onClick={() => {
+            setFiltertab(true);
+            setFilterchild(false);
+          }}
+        />
       </div>
       <div className="filterheadnavbar__top">
         <div className="fhntleft">
@@ -128,6 +159,51 @@ function Hero() {
         </div>
       ))}
     </div>
+  );
+
+  const handleClick = () => {
+    settoggle(!typetoggle);
+    if (typetoggle === true) {
+      setTypeselected([]);
+    } else if (typetoggle === false) {
+      setTypeselected(typelist.map((item) => item.title));
+    }
+  };
+
+  const filterchildbody = (
+    <>
+      {filterselect === "Type" && (
+        <div className="fcbbody">
+          <div className="fcbbody__top">
+            <div className="fcbbt-left">
+              {typetoggle ? (
+                <div onClick={handleClick}>{CheckedIcon}</div>
+              ) : (
+                <div onClick={handleClick}>{UnCheckIcon}</div>
+              )}
+            </div>
+            <label>Select All</label>
+          </div>
+          <div className="fcbbody__bottom">
+            {typelist.map((item, index) => (
+              <div className="fcbbitem" key={index}>
+                <div
+                  className="fcbbitem-left"
+                  onClick={() => handleTypeSelect(item.title)}
+                >
+                  {typeselected.includes(item.title) ? (
+                    <div className="">{CheckedIcon}</div>
+                  ) : (
+                    <div>{UnCheckIcon}</div>
+                  )}
+                </div>
+                <label>{item.title}</label>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+    </>
   );
 
   const filterbybody = (
@@ -200,7 +276,9 @@ function Hero() {
 
       {sorttab && <SidebarOutlet top={sortbyhead} body={sortbybody} />}
       {filtertab && <SidebarOutlet top={filterhead} body={filterbybody} />}
-      {filterchild && <SidebarChild top={filterheadchild} />}
+      {filterchild && (
+        <SidebarChild top={filterheadchild} body={filterchildbody} />
+      )}
     </>
   );
 }
