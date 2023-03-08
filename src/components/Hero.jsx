@@ -10,6 +10,7 @@ import {
   NavArrowLeftWhite,
   UnCheckIcon,
   CheckedIcon,
+  ClearCirle,
 } from "../utils/tools";
 import KnobLogoWhite from "../assets/svg/knoblogowhite.svg";
 import MenuIcon from "../assets/svg/menuicon.svg";
@@ -173,35 +174,48 @@ function Hero() {
   const filterchildbody = (
     <>
       {filterselect === "Type" && (
-        <div className="fcbbody">
-          <div className="fcbbody__top">
-            <div className="fcbbt-left">
-              {typetoggle ? (
-                <div onClick={handleClick}>{CheckedIcon}</div>
-              ) : (
-                <div onClick={handleClick}>{UnCheckIcon}</div>
-              )}
-            </div>
-            <label>Select All</label>
-          </div>
-          <div className="fcbbody__bottom">
-            {typelist.map((item, index) => (
-              <div className="fcbbitem" key={index}>
-                <div
-                  className="fcbbitem-left"
-                  onClick={() => handleTypeSelect(item.title)}
-                >
-                  {typeselected.includes(item.title) ? (
-                    <div className="">{CheckedIcon}</div>
-                  ) : (
-                    <div>{UnCheckIcon}</div>
-                  )}
-                </div>
-                <label>{item.title}</label>
+        <>
+          <div className="fcbbody">
+            <div className="fcbbody__top">
+              <div className="fcbbt-left">
+                {typetoggle ? (
+                  <div onClick={handleClick}>{CheckedIcon}</div>
+                ) : (
+                  <div onClick={handleClick}>{UnCheckIcon}</div>
+                )}
               </div>
-            ))}
-          </div>
-        </div>
+              <label>Select All</label>
+            </div>
+            <div className="fcbbody__bottom">
+              {typelist.map((item, index) => (
+                <div className="fcbbitem" key={index}>
+                  <div
+                    className="fcbbitem-left"
+                    onClick={() => handleTypeSelect(item.title)}
+                  >
+                    {typeselected.includes(item.title) ? (
+                      <div className="">{CheckedIcon}</div>
+                    ) : (
+                      <div>{UnCheckIcon}</div>
+                    )}
+                  </div>
+                  <label>{item.title}</label>
+                </div>
+              ))}
+            </div>
+          </div>{" "}
+          {typeselected.length !== 0 && (
+            <div
+              className="fcbclearfilter"
+              onClick={() => {
+                setTypeselected([]);
+              }}
+            >
+              <div className="fcbcfleft">{ClearCirle}</div>
+              <label>Clear Filter</label>
+            </div>
+          )}
+        </>
       )}
     </>
   );

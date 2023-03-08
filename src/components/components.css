@@ -672,6 +672,8 @@
 
 .fcbbody {
   padding: 0px 16px;
+  width: 100%;
+  align-items: start;
 }
 
 .fcbbody__top {
@@ -682,11 +684,13 @@
   margin-bottom: 12px;
 }
 
-.fcbbt-left, .fcbbitem-left {
+.fcbbt-left,
+.fcbbitem-left {
   cursor: pointer;
 }
 
-.fcbbody__top label, .fcbbitem label {
+.fcbbody__top label,
+.fcbbitem label {
   font-family: "Manrope";
   font-style: normal;
   font-weight: 600;
@@ -703,6 +707,32 @@
   gap: 22px;
   cursor: pointer;
   padding: 12px 0;
+}
+
+.fcbclearfilter {
+  margin: 0 auto;
+  width: max-content;
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  padding: 12px 13px;
+  gap: 8px;
+  height: 40px;
+  background: #ffffff;
+  border: 1px solid rgba(123, 127, 153, 0.25);
+  border-radius: 4px;
+  margin-top: 50px;
+}
+
+.fcbclearfilter label {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: -0.03em;
+  cursor: pointer;
+  color: #143a4f;
 }
 
 .filterheadnavbar__top {
