@@ -27,6 +27,7 @@ function Hero() {
   const [furnishedselected, setFurnishedselected] = useState([]);
   const [ensuiteselected, setEnsuiteselected] = useState([]);
   const [amenitiesselected, setAmenitiesselected] = useState([]);
+  const [roommatesselected, setRoommatesselected] = useState([]);
   const useToggle = () => {
     const [toggleValue, setToggleValue] = useState(false);
 
@@ -70,6 +71,11 @@ function Hero() {
     { id: 1, title: "Yes" },
     { id: 2, title: "No" },
   ];
+
+  const roommateslist = [
+    { id: 1, title: "Yes" },
+    { id: 2, title: "No" },
+  ]
 
   const amenitieslist = [
     { id: 1, title: "Air Conditioning" },
@@ -117,6 +123,16 @@ function Hero() {
       );
     } else {
       setAmenitiesselected((prevSelected) => [...prevSelected, id]);
+    }
+  };
+
+  const handleRoommatesSelect = (id) => {
+    if (roommatesselected.includes(id)) {
+      setRoommatesselected((prevSelected) =>
+        prevSelected.filter((s) => s !== id)
+      );
+    } else {
+      setRoommatesselected((prevSelected) => [...prevSelected, id]);
     }
   };
 
@@ -248,6 +264,15 @@ function Hero() {
       setAmenitiesselected([]);
     } else if (typetoggle === false) {
       setAmenitiesselected(amenitieslist.map((item) => item.title));
+    }
+  };
+
+  const handleRoommatesClick = () => {
+    settoggle(!typetoggle);
+    if (typetoggle === true) {
+      setRoommatesselected([]);
+    } else if (typetoggle === false) {
+      setRoommatesselected(roommateslist.map((item) => item.title));
     }
   };
 
@@ -421,6 +446,50 @@ function Hero() {
               className="fcbclearfilter"
               onClick={() => {
                 setAmenitiesselected([]);
+              }}
+            >
+              <div className="fcbcfleft">{ClearCirle}</div>
+              <label>Clear Filter</label>
+            </div>
+          )}
+        </>
+      )}
+      {filterselect === "Roommates" && (
+        <>
+          <div className="fcbbody">
+            <div className="fcbbody__top">
+              <div className="fcbbt-left">
+                {typetoggle ? (
+                  <div onClick={handleRoommatesClick}>{CheckedIcon}</div>
+                ) : (
+                  <div onClick={handleRoommatesClick}>{UnCheckIcon}</div>
+                )}
+              </div>
+              <label>Select All</label>
+            </div>
+            <div className="fcbbody__bottom">
+              {roommateslist.map((item, index) => (
+                <div className="fcbbitem" key={index}>
+                  <div
+                    className="fcbbitem-left"
+                    onClick={() => handleRoommatesSelect(item.title)}
+                  >
+                    {roommatesselected.includes(item.title) ? (
+                      <div className="">{CheckedIcon}</div>
+                    ) : (
+                      <div>{UnCheckIcon}</div>
+                    )}
+                  </div>
+                  <label>{item.title}</label>
+                </div>
+              ))}
+            </div>
+          </div>
+          {roommatesselected.length !== 0 && (
+            <div
+              className="fcbclearfilter"
+              onClick={() => {
+                setRoommatesselected([]);
               }}
             >
               <div className="fcbcfleft">{ClearCirle}</div>
