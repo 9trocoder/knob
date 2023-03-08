@@ -212,7 +212,7 @@ function Hero() {
               }}
             >
               <div className="fcbcfleft">{ClearCirle}</div>
-              <label>Clear Filter</label>
+              <label>Clear filter</label>
             </div>
           )}
         </>
