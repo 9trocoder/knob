@@ -13,7 +13,6 @@ import {
   ClearCirle,
 } from "../utils/tools";
 import KnobLogoWhite from "../assets/svg/knoblogowhite.svg";
-import MenuIcon from "../assets/svg/menuicon.svg";
 import MenuIconClose from "../assets/svg/menucloseicon.svg";
 import SidebarOutlet from "./SidebarOutlet";
 import SidebarChild from "./SidebarChild";
@@ -212,7 +211,7 @@ function Hero() {
               }}
             >
               <div className="fcbcfleft">{ClearCirle}</div>
-              <label>Clear filter</label>
+              <label>Clear Filter</label>
             </div>
           )}
         </>
