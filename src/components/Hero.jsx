@@ -483,9 +483,7 @@ function Hero() {
                   <label>{item.title}</label>
                 </div>
               ))}
-            </div>
-          </div>
-          {roommatesselected.length !== 0 && (
+            </div>  {roommatesselected.length !== 0 && (
             <div
               className="fcbclearfilter"
               onClick={() => {
@@ -496,6 +494,8 @@ function Hero() {
               <label>Clear filter</label>
             </div>
           )}
+          </div>
+        
         </>
       )}
     </>
