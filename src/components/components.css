@@ -895,6 +895,27 @@
     padding: 40px 16px;
   }
 }
+
+@media screen and (max-width: 640px) { 
+  .homescnt {
+    max-width: 992px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 20px 16px;
+  }
+
+  .homecnt {
+    max-width: 500px;
+    width: 100%;
+    border: 1px solid rgba(123, 127, 153, 0.15);
+    border-radius: 12px;
+  }
+}
 @media screen and (max-width: 500px) {
   .navbar_menu {
     display: flex;
