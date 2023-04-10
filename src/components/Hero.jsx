@@ -75,7 +75,7 @@ function Hero() {
   const roommateslist = [
     { id: 1, title: "Yes" },
     { id: 2, title: "No" },
-  ]
+  ];
 
   const amenitieslist = [
     { id: 1, title: "Air Conditioning" },
@@ -483,19 +483,19 @@ function Hero() {
                   <label>{item.title}</label>
                 </div>
               ))}
-            </div>  {roommatesselected.length !== 0 && (
-            <div
-              className="fcbclearfilter"
-              onClick={() => {
-                setRoommatesselected([]);
-              }}
-            >
-              <div className="fcbcfleft">{ClearCirle}</div>
-              <label>Clear filter</label>
-            </div>
-          )}
+            </div>{" "}
+            {roommatesselected.length !== 0 && (
+              <div
+                className="fcbclearfilter"
+                onClick={() => {
+                  setRoommatesselected([]);
+                }}
+              >
+                <div className="fcbcfleft">{ClearCirle}</div>
+                <label>Clear filter</label>
+              </div>
+            )}
           </div>
-        
         </>
       )}
     </>
@@ -547,14 +547,23 @@ function Hero() {
               <div className="herosearchbtn">{SearchWhiteIcon}</div>
             </div>
             <div className="herofilter">
-              <div className="herofilteritem" onClick={() => setSort(true)}>
+              <div
+                className="herofilteritem"
+                onClick={() => {
+                  setSort(true);
+                  setFiltertab(false);
+                }}
+              >
                 <div className="herofilt"></div>
                 <label>Sort By: {sortselect}</label>
                 <div className="herofiltadd">{PlusIcon}</div>
               </div>
               <div
                 className="herofilteritem"
-                onClick={() => setFiltertab(true)}
+                onClick={() => {
+                  setFiltertab(true);
+                  setSort(false);
+                }}
               >
                 <div className="herofilt herofiltb"></div>
                 <label>Filter</label>

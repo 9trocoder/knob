@@ -7,7 +7,7 @@ import img3 from "../assets/img/img3.png";
 import img4 from "../assets/img/img4.png";
 
 function Homes() {
-  const images = [img1, img2, img3, img4];
+  const images = ["https://i.ibb.co/Fg3Q84r/img1.png", "https://i.ibb.co/FKhPwSY/img2.png", "https://i.ibb.co/qmM1Q2d/img3.png", "https://i.ibb.co/gJtyZh9/img4.png"];
   const features = ["Apartment", "Estate", "Furnished", "Ensuite"];
   return (
     <div className="homescnt">
